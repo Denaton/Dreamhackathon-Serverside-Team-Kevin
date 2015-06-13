@@ -27,6 +27,10 @@ public class Stats : MonoBehaviour {
 		GUI.EndGroup();
 		GUI.Label (new Rect ((Screen.width-200)/2, 0, 200, 40), Mathf.Floor((currentLife/maxLife)*100).ToString() + "%","LabelCenter");
 	}
+
+	public void dealtDamage(int dmg, string dealer){
+		currentLife -= dmg;
+	}
 }
 
 public enum Classes

@@ -26,7 +26,5 @@ public class Movemenet : MonoBehaviour {
 		}
 		transform.position = Movement;
 
-		// Attacks
-
 	}
 }
