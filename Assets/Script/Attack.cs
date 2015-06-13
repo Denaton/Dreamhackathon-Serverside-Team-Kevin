@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Attack : MonoBehaviour {
 	public int myRange = 0;
+	bool selectedAttack = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,7 +16,7 @@ public class Attack : MonoBehaviour {
 			List<GameObject> targets = GetTargets(myRange);
 			foreach (GameObject target in targets) {
 				Debug.Log (target.name);
-				target.GetComponent<Stats>().dealtDamage(10,transform.GetComponent<Stats>().username);
+				target.GetComponent<Stats>().dealtDamage(1,transform.GetComponent<Stats>().username);
 			}
 		}
 	}
@@ -34,5 +35,12 @@ public class Attack : MonoBehaviour {
 			}
 		}
 		return targets;
+	}
+
+	void OnGUI(){
+		List<GameObject> targets = GetTargets(myRange);
+		for (int i = 0; i < targets.Count; i++) {
+			GUI.Button(new Rect(0,40*i,200,40),targets[i].GetComponent<Stats>().username);
+		}
 	}
 }

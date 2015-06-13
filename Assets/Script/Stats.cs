@@ -30,6 +30,7 @@ public class Stats : MonoBehaviour {
 
 	public void dealtDamage(int dmg, string dealer){
 		currentLife -= dmg;
+		Debug.Log ("Dealt Damage by " + dealer);
 	}
 }
 
