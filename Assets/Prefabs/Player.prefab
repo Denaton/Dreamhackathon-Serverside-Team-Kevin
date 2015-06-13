@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591b42c053679fd42806ce33de254b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRange: 0
 --- !u!212 &21298484
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e8932b872cfb9bb4b807b39c7d515ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 
 public class Attack : MonoBehaviour {
 	public int myRange = 0;
-	bool selectedAttack = false;
+	//bool selectedAttack = false;
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -26,11 +25,11 @@ public class Attack : MonoBehaviour {
 		GameObject[] objs = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 		List<GameObject> targets = new List<GameObject>();
 		foreach(GameObject obj in objs){
-			if((obj.transform.position - transform.position).magnitude <= range){ // Only those in range
-				if(obj.tag == "Unit"){ // Only Object with tag Unit
-					if(obj.transform != transform){ // Exlude your self.
+			if((obj.transform.position - transform.position).magnitude <= range*1.5){ // Only those in range
+				if(obj.tag == "Unit" || obj.tag == "Boss"){ // Only Object with tag Unit
+					//if(obj.transform != transform){ // Exlude your self.
 						targets.Add(obj);
-					}
+					//}
 				}
 			}
 		}

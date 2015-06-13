@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cf17d60435a3cb54db1424c1b5dde937
-timeCreated: 1434221732
+guid: e8932b872cfb9bb4b807b39c7d515ccd
+timeCreated: 1434232259
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -43,7 +43,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 256
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
