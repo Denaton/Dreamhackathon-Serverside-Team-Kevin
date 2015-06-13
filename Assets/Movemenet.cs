@@ -10,6 +10,7 @@ public class Movemenet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// Movement
 		Vector3 Movement = transform.position;
 		if (Input.GetKeyUp(KeyCode.RightArrow)) {
 			Movement.x += 1;
@@ -24,6 +25,8 @@ public class Movemenet : MonoBehaviour {
 			Movement.y -= 1;
 		}
 		transform.position = Movement;
+
+		// Attacks
 
 	}
 }

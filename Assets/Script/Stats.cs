@@ -5,6 +5,7 @@ using System.Collections;
 public class Stats : MonoBehaviour {
 
 	public string username = "";
+	public Classes Class;
 	public float maxLife = 0;
 	public float currentLife = 0;
 
@@ -26,4 +27,11 @@ public class Stats : MonoBehaviour {
 		GUI.EndGroup();
 		GUI.Label (new Rect ((Screen.width-200)/2, 0, 200, 40), Mathf.Floor((currentLife/maxLife)*100).ToString() + "%","LabelCenter");
 	}
+}
+
+public enum Classes
+{
+	Melee,
+	Range,
+	Boss
 }
