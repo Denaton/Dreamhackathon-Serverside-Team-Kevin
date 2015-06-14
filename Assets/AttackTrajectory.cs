@@ -39,7 +39,7 @@ public class AttackTrajectory : MonoBehaviour {
 		for(var i = 0; i < verts; i++)
 		{
 			float x = pos.x + vel.x * Time.fixedDeltaTime;
-			float y = pos.z + vel.z * Time.fixedDeltaTime;
+			float y = pos.y + vel.y * Time.fixedDeltaTime;
 			
 			line.SetPosition(i, new Vector2(x,y));
 			//vel=new Vector3(x,y,0.0f);
