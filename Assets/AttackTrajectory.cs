@@ -47,6 +47,13 @@ public class AttackTrajectory : MonoBehaviour {
 			//vel=new Vector3(x,y,0.0f);
 			pos = pos + vel * Time.fixedDeltaTime;
 		}
+
+		GameObject[] boss = GameObject.FindGameObjectsWithTag("Boss");
+		for (int i = 0; i < boss.Length; i++) {
+			if((boss[i].transform.position - pos).magnitude < 3){
+				boss[i].GetComponent<Stats>().dealtDamage(5,this.transform.GetComponent<"Stats">().username);
+			}
+		}
 		
 	}
 }

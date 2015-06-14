@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Generator : MonoBehaviour {
 	public Transform Tiles;
 	public Vector2 size;
+	public Transform boss;
 	public static List<List<Transform>> map = new List<List<Transform>>();
 	private List<Transform> objects = new List<Transform>();
 	
@@ -19,6 +20,7 @@ public class Generator : MonoBehaviour {
 			}
 			map.Add(objects);
 		}
+		Instantiate(boss, new Vector3(5,7,0), Quaternion.identity) as Transform;
 	}
 	
 	// Update is called once per frame
