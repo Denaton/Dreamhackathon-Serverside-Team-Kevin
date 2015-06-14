@@ -59,6 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a332fdfc16ba8647bf69aa0247b8a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  time: 3
+  cooldown: 0
 --- !u!114 &11427350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +138,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: time
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105660}
