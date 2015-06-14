@@ -16,11 +16,13 @@ public class AttackTrajectory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		transform.GetComponent<Movemenet>().enabled = !isAtackMode;
 		if (isAtackMode)
 		{	
 			if (gyro.enabled) {
 
-				Vector2 AtackVector = new Vector2(gyro.gravity.x, gyro.gravity.y)*gyro.rotationRate.x;
+				Vector2 AtackVector = new Vector2(gyro.gravity.x, gyro.gravity.y)*gyro.rotationRate.x/2;
+				Debug.Log (AtackVector);
 				DrawTraject(this.transform.position, AtackVector); 
 			}
 		}
@@ -29,7 +31,7 @@ public class AttackTrajectory : MonoBehaviour {
 
 	void DrawTraject(Vector2 startPosition, Vector2 startVelocity){
 		
-		int verts = 10;
+		int verts = 50;
 		LineRenderer line = this.gameObject.GetComponent<LineRenderer>();
 		line.SetVertexCount(verts);
 		
@@ -39,7 +41,7 @@ public class AttackTrajectory : MonoBehaviour {
 		for(var i = 0; i < verts; i++)
 		{
 			float x = pos.x + vel.x * Time.fixedDeltaTime;
-			float y = pos.z + vel.z * Time.fixedDeltaTime;
+			float y = pos.y + vel.y * Time.fixedDeltaTime;
 			
 			line.SetPosition(i, new Vector2(x,y));
 			//vel=new Vector3(x,y,0.0f);

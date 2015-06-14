@@ -42,14 +42,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solid: 0
   ground:
-  - {fileID: 2800000, guid: 913ef801aec8aad48b95ec77c59d122a, type: 3}
-  - {fileID: 2800000, guid: e20177370c83f0f4a9a82dd5f4444179, type: 3}
-  - {fileID: 2800000, guid: cf17d60435a3cb54db1424c1b5dde937, type: 3}
+  - {fileID: 21300000, guid: e20177370c83f0f4a9a82dd5f4444179, type: 3}
   water:
-  - {fileID: 2800000, guid: 11968dfe39b790043b851fde2c12efa9, type: 3}
-  - {fileID: 2800000, guid: 156e247a00cdd6d4db72dfa7634ee5fe, type: 3}
+  - {fileID: 21300000, guid: 11968dfe39b790043b851fde2c12efa9, type: 3}
   stone:
-  - {fileID: 2800000, guid: 329e16e5f64377f4795eea1cb96bf641, type: 3}
+  - {fileID: 21300000, guid: 329e16e5f64377f4795eea1cb96bf641, type: 3}
 --- !u!212 &21244952
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -85,7 +82,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: water.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: stone.Array.size
@@ -93,12 +90,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ground.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ground.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 913ef801aec8aad48b95ec77c59d122a, type: 3}
+      objectReference: {fileID: 21300000, guid: e20177370c83f0f4a9a82dd5f4444179,
+        type: 3}
     - target: {fileID: 0}
       propertyPath: ground.Array.data[1]
       value: 
@@ -110,7 +108,8 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: water.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 11968dfe39b790043b851fde2c12efa9, type: 3}
+      objectReference: {fileID: 21300000, guid: 11968dfe39b790043b851fde2c12efa9,
+        type: 3}
     - target: {fileID: 0}
       propertyPath: water.Array.data[1]
       value: 
@@ -118,7 +117,8 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: stone.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 329e16e5f64377f4795eea1cb96bf641, type: 3}
+      objectReference: {fileID: 21300000, guid: 329e16e5f64377f4795eea1cb96bf641,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133496}

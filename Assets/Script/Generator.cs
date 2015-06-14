@@ -10,7 +10,7 @@ public class Generator : MonoBehaviour {
 	
 	Camera camera;	
 	// Use this for initialization
-	void Start () {
+	void Start () { 
 		camera = GetComponent<Camera>();
 		for (int x = 0; x < size.x; x++) {
 			objects.Clear();
@@ -23,6 +23,9 @@ public class Generator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		Screen.orientation = ScreenOrientation.Portrait;
+		Screen.autorotateToPortrait = false;
 	
 	}
 	
@@ -30,7 +33,11 @@ public class Generator : MonoBehaviour {
 	void OnGUI(){
 		GUI.skin = skin;
 		GameObject[] players = GameObject.FindGameObjectsWithTag("Unit");
+		if (players.Length == 0) 
+			return;
+		Debug.Log (players.Length);
 		for (int i = 0; i < players.Length; i++) {
+			Debug.Log (players[i].name);
 			Vector3 screenPos = camera.WorldToScreenPoint(players[i].transform.position);
 			GUI.Box(new Rect(screenPos.x-32, Screen.height - screenPos.y - 64, 64, 64), "","HealthBar");
 			GUI.BeginGroup(new Rect(screenPos.x-32, Screen.height - screenPos.y - 64, 64*(players[i].GetComponent<Stats>().currentLife/players[i].GetComponent<Stats>().maxLife), 64));

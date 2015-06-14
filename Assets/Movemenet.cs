@@ -10,8 +10,7 @@ public class Movemenet : MonoBehaviour {
 	public bool cooldown = false;
 	float currentTimer = 0;
 	// Use this for initialization
-	void Start () {
-		Screen.autorotateToPortrait = true;
+	void Start () { 
 		if (SystemInfo.supportsGyroscope) {
 			gyro = Input.gyro;
 			gyro.enabled = true;
@@ -32,29 +31,33 @@ public class Movemenet : MonoBehaviour {
 	}
 
 	public bool CheckSolid(int x, int y){
-		return Generator.map[x][y].GetComponent<Tile>().solid;
+		if (x >= 0 && y >= 0 && x <= 10 && y <= 10 ) { 
+			Debug.Log (Generator.map [x] [y].GetComponent<Tile> ().solid);
+			return Generator.map [x] [y].GetComponent<Tile> ().solid;
+		} else
+			return true;
 	}
 
 	void Move (int x, int y) {
-		if (canMove) {
-			if(!CheckSolid(Mathf.FloorToInt(transform.position.x+x),Mathf.FloorToInt(transform.position.y+y))){
+		
+		if (!CheckSolid (Mathf.RoundToInt (transform.position.x + x), Mathf.RoundToInt (transform.position.y + y)) || transform.GetComponent<AttackTrajectory>().isAtackMode) {
+			Debug.Log(Mathf.RoundToInt (transform.position.x + x));
+			if (canMove) {
 				Vector3 Movement = transform.position;
 				Movement.x += x;
 				Movement.y += y;
 				transform.position = Movement;
 				canMove = false;
-			}
-		} else if (countDown()) {
-			canMove = true;
-		}
+				Debug.Log ("Moved");
+			} 
+		} else 
+			Debug.Log ("Unable to move");
 	}
 
 	// Update is called once per frame
-	void Update () {
-		Screen.orientation = ScreenOrientation.Portrait;
+	void Update () { 
 		// Movement
 		//Vector3 Movement = transform.position;
-		Debug.Log (gyro.gravity);
 		if (countDown ()) {
 			canMove = true;
 			cooldown = false;
@@ -65,19 +68,19 @@ public class Movemenet : MonoBehaviour {
 				cooldown = true;
 			}
 		}
-		if (gyro.gravity.x >= 0.7) {
+		if (gyro.gravity.x >= 0.5) {
 			//Movement.x += 1;
 			Move (1,0);
 		}
-		else if (gyro.gravity.x <= -0.7) {
+		else if (gyro.gravity.x <= -0.5) {
 			//Movement.x -= 1;
 			Move (-1,0);
 		}
-		else if (gyro.gravity.y >= 0.7) {
+		else if (gyro.gravity.y >= 0.5) {
 			//Movement.y += 1;
 			Move (0,1);
 		}
-		else if (gyro.gravity.y <= -0.7) {
+		else if (gyro.gravity.y <= -0.5) {
 			//Movement.y -= 1;
 			Move (0,-1);
 		}

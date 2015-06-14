@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 413920}
   - 212: {fileID: 21298484}
   - 114: {fileID: 11413052}
-  - 114: {fileID: 11466834}
   - 114: {fileID: 11427350}
   - 114: {fileID: 11426862}
+  - 114: {fileID: 11467322}
+  - 120: {fileID: 12080784}
   m_Layer: 0
   m_Name: Player
   m_TagString: Unit
@@ -94,7 +95,7 @@ MonoBehaviour:
     i15: 242
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &11466834
+--- !u!114 &11467322
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,12 +103,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 105660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a675b3fbae9ee3a4cb6e4ea92d5d3117, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fdcc2a2c8f614c5ca327ff6c52e89df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tiles: {fileID: 0}
-  size: {x: 0, y: 0}
-  skin: {fileID: 0}
+  isAtackMode: 1
+--- !u!120 &12080784
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105660}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    startWidth: 1
+    endWidth: 1
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 4294967295
+  m_UseWorldSpace: 1
 --- !u!212 &21298484
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -144,6 +180,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: time
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isAtackMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
