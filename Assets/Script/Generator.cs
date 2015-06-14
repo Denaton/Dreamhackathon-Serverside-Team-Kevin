@@ -4,14 +4,14 @@ using System.Collections;
 public class Generator : MonoBehaviour {
 	public Transform Tiles;
 	public Vector2 size;
-
+	public static GameObject[][] map;
 	Camera camera;
 	// Use this for initialization
 	void Start () {
 		camera = GetComponent<Camera>();
 		for (int x = 0; x < size.x; x++) {
 			for (int y = 0; y < size.y; y++) {
-				Instantiate(Tiles, new Vector3(x,y,0), Quaternion.identity);
+				map[x][y] = Instantiate(Tiles, new Vector3(x,y,0), Quaternion.identity) as GameObject;
 			}
 		}
 	}

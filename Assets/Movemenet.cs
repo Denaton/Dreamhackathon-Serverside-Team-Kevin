@@ -31,18 +31,24 @@ public class Movemenet : MonoBehaviour {
 		}
 	}
 
+	public bool CheckSolid(int x, int y){
+		return Generator.map[x][y].transform.GetComponent<Tile>().solid;
+	}
+
 	void Move (int x, int y) {
 		if (canMove) {
-			Vector3 Movement = transform.position;
-			Movement.x += x;
-			Movement.y += y;
-			transform.position = Movement;
-			canMove = false;
+			if(!CheckSolid(Mathf.FloorToInt(transform.position.x+x),Mathf.FloorToInt(transform.position.y+y))){
+				Vector3 Movement = transform.position;
+				Movement.x += x;
+				Movement.y += y;
+				transform.position = Movement;
+				canMove = false;
+			}
 		} else if (countDown()) {
 			canMove = true;
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		Screen.orientation = ScreenOrientation.Portrait;
