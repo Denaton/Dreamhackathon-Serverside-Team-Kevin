@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Generator : MonoBehaviour {
 	public Transform Tiles;
 	public Vector2 size;
-	public static GameObject[][] map;
-	Camera camera;
+	public static List<List<Transform>> map = new List<List<Transform>>();
+	private List<Transform> objects = new List<Transform>();
+	
+	Camera camera;	
 	// Use this for initialization
 	void Start () {
 		camera = GetComponent<Camera>();
 		for (int x = 0; x < size.x; x++) {
+			objects.Clear();
 			for (int y = 0; y < size.y; y++) {
-				map[x][y] = Instantiate(Tiles, new Vector3(x,y,0), Quaternion.identity) as GameObject;
+				objects.Add(Instantiate(Tiles, new Vector3(x,y,0), Quaternion.identity) as Transform);
 			}
+			map.Add(objects);
 		}
 	}
 	

@@ -32,7 +32,7 @@ public class Movemenet : MonoBehaviour {
 	}
 
 	public bool CheckSolid(int x, int y){
-		return Generator.map[x][y].transform.GetComponent<Tile>().solid;
+		return Generator.map[x][y].GetComponent<Tile>().solid;
 	}
 
 	void Move (int x, int y) {
