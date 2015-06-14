@@ -5,10 +5,8 @@ public class Movemenet : MonoBehaviour {
 
 	int MovementSpeed = 10;
 	private Gyroscope gyro;
-	private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody> ();
 		if (SystemInfo.supportsGyroscope) {
 			gyro = Input.gyro;
 			gyro.enabled = true;
@@ -40,7 +38,6 @@ public class Movemenet : MonoBehaviour {
 		if (gyro!=null&&gyro.enabled) 
 		{	
 			Vector3 movement=new Vector3(gyro.gravity.x, 0.0f, gyro.gravity.y);
-			rb.AddForce (movement * MovementSpeed);	
 
 			//spin (for later use)
 			float spin = gyro.rotationRateUnbiased.x;
